@@ -14,6 +14,7 @@ public class seluler {
 static Scanner sc = new Scanner(System.in);
 static StringBuffer stringBufferOfdata = new StringBuffer();
 
+<<<<<<< HEAD
 public static void tambahSimcard() {
 	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 	BufferedWriter outFile;
@@ -32,6 +33,8 @@ public static void tambahSimcard() {
 	}
 	
 }
+=======
+>>>>>>> tambah data simcard
 
 public static void tampilData() {
 	

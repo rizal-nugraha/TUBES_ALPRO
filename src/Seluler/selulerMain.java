@@ -14,11 +14,7 @@ public class selulerMain {
 		System.out.println("===PILIH MENU ===");
         System.out.println("1. Tambah Simcard");
         System.out.println("2. Ubah Simcard");
-<<<<<<< HEAD
         System.out.println("2. Hapus Simcard");
-=======
-        System.out.println("3. Hapus Simcard");
->>>>>>> tambah data simcard
         System.out.println("00. Keluar");
         System.out.println("=================");
         

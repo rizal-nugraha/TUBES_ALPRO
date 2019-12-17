@@ -1,41 +1,54 @@
-package Seluler;
+package seluler;
 
 import java.io.IOException;
 import java.util.Scanner;
 
 public class selulerMain {
+    public static void main(String[] args) throws IOException {
 
-	public static void main(String[] args) throws IOException {
-		// TODO Auto-generated method stub
-		
-		seluler r = new seluler();
-		Scanner input = new Scanner(System.in);
-		
-		System.out.println("===PILIH MENU ===");
-        System.out.println("1. Tambah Simcard");
-        System.out.println("2. Ubah Simcard");
-        System.out.println("2. Hapus Simcard");
-        System.out.println("00. Keluar");
-        System.out.println("=================");
-        
-		int nilai = input.nextInt();
-		
-		switch(nilai) {
-		case 1 :
-			r.tambahSimcard();
-			r.tampilData();
-			break;
-		case 2 :
-			r.tampilData();
-			r.ubahData();
-			r.tulisPerubahanData();
-			r.tampilData();
-			break;
-		default :
-			System.out.print("goblog");
-		}
-		
+        Scanner userInput = new Scanner(System.in);
+        String inputanUser;
+        boolean pilihanUser = true;
 
-	}
+        while (pilihanUser) {
+            System.out.println("<<---MENU DATA SELULER--->>");
+            System.out.println("1." + "Tampilkan daftar pelanggan");
+            System.out.println("2." + "Tambah data pelanggan");
+            System.out.println("3." + "Ubah data pelanggan");
+            System.out.println("4." + "Hapus data pelanggan");
+            System.out.println("5." + "Cari data pelanggan");
+
+            System.out.print("\npilih nomor : ");
+            inputanUser = userInput.next();
+
+            switch (inputanUser) {
+            case "1":
+                System.out.println("<<<<<<<<<<<<<<<<<<<<<< DAFTAR PELANGGAN >>>>>>>>>>>>>>>>>>>>>");
+                programSeluler.tampilDataPelanggan();
+                break;
+            case "2":
+                System.out.println("TAMBAH DATA PELANGGAN");
+                programSeluler.tambahData();
+                programSeluler.tampilDataPelanggan();
+                break;
+            case "3":
+                System.out.println("UBAH DATA PELANGGAN");
+                programSeluler.ubahDataPelanggan();
+                break;
+            case "4":
+                System.out.println("HAPUS DATA PELANGGAN");
+                programSeluler.hapusDataPelanggan();
+                break;
+            case "5":
+                System.out.println("CARI PELANGGAN");
+                programSeluler.cariDataPelanggan();
+                break;
+            default:
+                System.err.println("\nInputan tidak ditemukan\nSilahkan pilih menu 1-5");
+            }
+
+            pilihanUser = programPelanggan.getYaAtauTidak("Apakah melanjutkan ke menu lain?");
+        }
+    }
 
 }

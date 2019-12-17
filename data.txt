@@ -1,8 +1,0 @@
-nomor : 123 sisa pulsa : 321
-nomor : 321 sisa pulsa : 123
-nomor : 757585 sisa pulsa : 50000
-nomor : 100 sisa pulsa : 100000
-nomor : 99 sisa pulsa : 900000
-nomor : 087 sisa pulsa : 20000
->>>>>>> tambah data simcard
-nomor : 123 sisa pulsa : 321

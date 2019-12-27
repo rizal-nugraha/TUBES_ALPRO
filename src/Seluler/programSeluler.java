@@ -239,6 +239,41 @@ public class programSeluler {
 
     }
 
+    public static void tampilDataPelangganBaru() throws IOException {
+
+        FileReader fileInput;
+        BufferedReader bufferInput;
+
+        try {
+            fileInput = new FileReader("datPel.txt");
+            bufferInput = new BufferedReader(fileInput);
+        } catch (Exception e) {
+            System.err.println("Data pelanggan tidak ada");
+            System.err.println("tambah data terlebih dahulu");
+            tambahData();
+            return;
+        }
+
+        String data = bufferInput.readLine();
+        int nomorData = 0;
+        while (data != null) {
+            nomorData++;
+
+            StringTokenizer strTokens = new StringTokenizer(data, ",");
+
+            strTokens.nextToken();
+            System.out.printf("%2d .", nomorData);
+            System.out.printf("\t%4s ,", strTokens.nextToken());
+            System.out.printf("\t%-20s ,", strTokens.nextToken());
+            System.out.printf("\t%-10s ,", strTokens.nextToken());
+            System.out.printf("\t%s ;", strTokens.nextToken());
+            System.out.print("\n");
+
+            data = bufferInput.readLine();
+        }
+
+    }
+
     public static void cariDataPelanggan() throws IOException {
 
         // membaca dataPelanggan ada atau tidak

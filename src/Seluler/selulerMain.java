@@ -17,6 +17,7 @@ public class selulerMain {
             System.out.println("3." + "Ubah data pelanggan");
             System.out.println("4." + "Hapus data pelanggan");
             System.out.println("5." + "Cari data pelanggan");
+            System.out.println("6." + "Tampilkan daftar pelanggan Terkini");
 
             System.out.print("\npilih nomor : ");
             inputanUser = userInput.next();
@@ -42,6 +43,10 @@ public class selulerMain {
             case "5":
                 System.out.println("CARI PELANGGAN");
                 programSeluler.cariDataPelanggan();
+                break;
+            case "6":
+                System.out.println("<<<<<<<<<<<<<<<<<<<<<< DAFTAR PELANGGAN TERKINI >>>>>>>>>>>>>>>>>>>>>");
+                programSeluler.tampilDataPelangganBaru();
                 break;
             default:
                 System.err.println("\nInputan tidak ditemukan\nSilahkan pilih menu 1-5");

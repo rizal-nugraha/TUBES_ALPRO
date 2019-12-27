@@ -11,7 +11,7 @@ public class pengkondisian {
     public void tampilanMenu() {
         found = false;
         System.out.println("===PILIH MENU ===");
-        System.out.println("1. Cek Saldo");
+        System.out.println("1. Cek Pulsa");
         System.out.println("2. Kirim Pesan");
         System.out.println("3. Isi pulsa");
         System.out.println("4. Panggilan");
@@ -33,7 +33,7 @@ public class pengkondisian {
                 break;
             case 2:
                 selulerPelanggan.openFileBaca();
-                selulerPelanggan.tarikTunai();
+                selulerPelanggan.kirimSMS();
                 selulerPelanggan.closeFileBaca();
                 selulerPelanggan.closeFileTulis();
                 found = true;
@@ -41,6 +41,13 @@ public class pengkondisian {
             case 3:
                 selulerPelanggan.openFileBaca();
                 selulerPelanggan.deposit();
+                selulerPelanggan.closeFileBaca();
+                selulerPelanggan.closeFileTulis();
+                found = true;
+                break;
+            case 4:
+                selulerPelanggan.openFileBaca();
+                selulerPelanggan.panggilan();
                 selulerPelanggan.closeFileBaca();
                 selulerPelanggan.closeFileTulis();
                 found = true;

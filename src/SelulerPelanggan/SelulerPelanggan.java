@@ -15,7 +15,7 @@ public class SelulerPelanggan {
 
     char ch;
     String isiPulsaTxt, konversiString, SMS;
-    int data, konversiInt, biayaSms = 1000, transaksi, IsiSaldo;
+    int data, konversiInt, biayaSms = 1000,biayaPanggilan = 2000, transaksi, IsiSaldo;
 
     public void cekSaldo() {
         try {
@@ -35,7 +35,7 @@ public class SelulerPelanggan {
         }
     }
 
-    public void tarikTunai() {
+    public void kirimSMS() {
         try {
             data = bis.read();
             ch = 0;
@@ -47,7 +47,8 @@ public class SelulerPelanggan {
             }
             konversiInt = Integer.parseInt(isiPulsaTxt);
             System.out.println("Sisa Pulsa Anda: Rp. " + isiPulsaTxt);
-
+            System.out.print("Nomor yang akan dipanggil : ");
+            SMS = sc.nextLine();
             System.out.print("Kirim pesan : ");
             SMS = sc.nextLine();
             transaksi = konversiInt - biayaSms;
@@ -155,6 +156,35 @@ public class SelulerPelanggan {
             System.err.println(nfe.getMessage());
         }
     }
+    
+    public void panggilan() {
+        try {
+            data = bis.read();
+            ch = 0;
+            isiPulsaTxt = "";
+            while (data != -1) {
+                ch = (char) data;
+                isiPulsaTxt += ch;
+                data = bis.read();
+            }
+            konversiInt = Integer.parseInt(isiPulsaTxt);
+            System.out.println("Sisa Pulsa Anda: Rp. " + isiPulsaTxt);
+
+            System.out.print("Nomor yang akan dipanggil : ");
+            SMS = sc.nextLine();
+            transaksi = konversiInt - biayaPanggilan;
+            konversiString = Integer.toString(transaksi);
+            openFileTulis();
+            pw.print(konversiString);
+
+            System.out.println("Sisa Pulsa Anda: Rp. " + transaksi);
+            System.out.println("");
+        } catch (IOException ioe) {
+            System.err.println(ioe.getMessage());
+        } catch (NumberFormatException nfe) {
+            System.err.println(nfe.getMessage());
+        }
+    }
 
     public void openFileBaca() {
         try {
@@ -187,5 +217,7 @@ public class SelulerPelanggan {
             pw.close();
         }
     }
+    
+    
 
 }

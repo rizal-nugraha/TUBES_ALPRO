@@ -1,3 +1,1 @@
 # TUBES_ALPRO
-
-@rdrizalnugraha

@@ -1,4 +1,4 @@
-package seluler;
+package selulerAdmin;
 
 import java.io.IOException;
 import java.util.Scanner;
